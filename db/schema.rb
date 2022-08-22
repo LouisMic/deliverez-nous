@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.0].define(version: 2022_08_22_151818) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_22_153358) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "date"
+    t.bigint "show_id", null: false
+    t.bigint "user_id", null: false
+    t.string "address"
+    t.boolean "validated", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["show_id"], name: "index_bookings_on_show_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -21,6 +32,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_22_151818) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "shows", force: :cascade do |t|
+    t.string "name"
+    t.bigint "category_id", null: false
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.string "company"
+    t.string "location_center"
+    t.integer "location_radius"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_shows_on_category_id"
+    t.index ["user_id"], name: "index_shows_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -37,6 +62,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_22_151818) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "shows"
+  add_foreign_key "bookings", "users"
   add_foreign_key "shows", "categories"
   add_foreign_key "shows", "users"
 end
