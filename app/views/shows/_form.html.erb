@@ -1,6 +1,6 @@
-<div class="container offset-2 col-8 mt-3">
+<div class="container offset-5 col-6 mt-3">
 <%= simple_form_for(@show) do |f| %>
-<div class="row align-items-start">
+<div class="row align-items-start form-create">
   <div class="col">
     <%= f.input :name, label: "Nom du spectacle" %>
     <%= f.input :company, label: "Nom de la compagnie" %>
@@ -9,7 +9,7 @@
   </div>
   <div class="col">
     <%= f.input :location_center, label: "Joué autour de :" %>
-    <%= f.input :location_radius, label: "Dans un rayon de :" %>
+    <%= f.input :location_radius, label: "Dans un rayon de (km):" %>
     <%= f.input :price, label: "Prix" %>
   </div>
     <div class="d-grid gap-2">
