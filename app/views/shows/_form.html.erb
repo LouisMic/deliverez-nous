@@ -1,10 +1,20 @@
+<div class="container offset-2 col-8 mt-3">
 <%= simple_form_for(@show) do |f| %>
-  <%= f.input :name %>
-  <%= f.association :category %>
-  <%= f.input :description %>
-  <%= f.input :company %>
-  <%= f.input :location_center %>
-  <%= f.input :location_radius %>
-  <%= f.input :price %>
-  <%= f.submit class: "btn btn-primary" %>
+<div class="row align-items-start">
+  <div class="col">
+    <%= f.input :name, label: "Nom du spectacle" %>
+    <%= f.input :company, label: "Nom de la compagnie" %>
+    <%= f.association :category, label: "Catégorie"%>
+    <%= f.input :description %>
+  </div>
+  <div class="col">
+    <%= f.input :location_center, label: "Joué autour de :" %>
+    <%= f.input :location_radius, label: "Dans un rayon de :" %>
+    <%= f.input :price, label: "Prix" %>
+  </div>
+    <div class="d-grid gap-2">
+      <%= f.button :submit, 'Valider',  class: "btn btn-primary button-orange"%>
+    </div>
 <% end %>
+</div>
+</div>
