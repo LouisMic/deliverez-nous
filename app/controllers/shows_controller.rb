@@ -17,7 +17,7 @@ class ShowsController < ApplicationController
 
   def update
     @show = Show.find(params[:id])
-    @show.update(task_params)
+    @show.update(show_params)
     if @show.save
       redirect_to show_path(@show)
     else
