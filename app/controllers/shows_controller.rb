@@ -5,7 +5,8 @@ class ShowsController < ApplicationController
 
   def create
     @show = Show.new(show_params)
-    if @show.save?
+    @show.user = current_user
+    if @show.save
       redirect_to shows_path()
     else
       render :new, status: :unprocessable_entity
