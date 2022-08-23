@@ -1,0 +1,10 @@
+<%= simple_form_for(@show) do |f| %>
+  <%= f.input :name %>
+  <%= f.association :category %>
+  <%= f.input :description %>
+  <%= f.input :company %>
+  <%= f.input :location_center %>
+  <%= f.input :location_radius %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
