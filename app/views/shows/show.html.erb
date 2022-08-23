@@ -1,22 +1,18 @@
 <div class="navbar">
 </div>
-<div class="offset-1 col-10 mt-5">
+<div class="offset-2 col-10 mt-5 d-grid">
   <div class="row mb-3">
-    <div class="col-3">
-    <img src="./images/log1b.png" alt="">
+    <div class="col-4">
+    <%= cl_image_tag @show.photos[0].key, class:"w-100", crop: :pad  %>
     </div>
-    <div class="offset-1 col-6 flex-column">
+    <div class="offset-1 col-4 flex-column">
     <h2><%= @show.name %></h2>
     <h3><%= @show.company %></h3>
-    </div>
-  </div>
-
-  <div class="row">
     <p><%= @show.description %></p>
-  </div>
-
-  <div class="row">
-    tbd
+    <% @show.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, class:"w-25", crop: :limit %>
+    <% end %>
+    </div>
   </div>
 
 </div>
