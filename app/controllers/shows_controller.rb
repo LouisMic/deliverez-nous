@@ -1,4 +1,5 @@
 class ShowsController < ApplicationController
+  before_action :set_show, only: [:show, :edit, :update]
   def new
     @show = Show.new()
   end
@@ -21,11 +22,9 @@ class ShowsController < ApplicationController
   end
 
   def edit
-    @show = Show.find(params[:id])
   end
 
   def update
-    @show = Show.find(params[:id])
     @show.update(show_params)
     if @show.save
       redirect_to show_path(@show)
@@ -41,6 +40,10 @@ class ShowsController < ApplicationController
 
   def show_params
     params.require(:show).permit(:name, :category_id, :description, :company, :location_center, :location_radius, :price)
+  end
+
+  def set_show
+    @show = Show.find(params[:id])
   end
 
 end
