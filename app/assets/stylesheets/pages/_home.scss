@@ -3,7 +3,7 @@
   background-size:cover;
   background-position:top;
   padding: 150px 0;
-  height: 500px;
+  height: 666px;
 }
 .homecontainer {
   width: 600px;
@@ -13,7 +13,19 @@
   background-color: white;
   box-shadow: 10px;
   padding: 10px;
-  margin-top: -50px;
+  margin-top: 50px;
+  height: 400px;
+}
+.homefooter {
+  display: flex;
+  // height: 300px;
+  padding: 0px 50px;
+}
+
+.formcreate {
+  background-color: rgba(255, 255, 255, 0.273);
+  box-shadow: 10px rgba(0, 0, 0, 0.126);
+  padding: 10px;
 }
 
 .form-create{

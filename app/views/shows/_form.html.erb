@@ -1,6 +1,6 @@
 <div class="container offset-5 col-6 mt-3">
 <%= simple_form_for(@show) do |f| %>
-<div class="row align-items-start form-create">
+<div class="row align-items-start formcreate">
   <div class="col">
     <%= f.input :name, label: "Nom du spectacle" %>
     <%= f.input :company, label: "Nom de la compagnie" %>
@@ -11,6 +11,7 @@
     <%= f.input :location_center, label: "Joué autour de :" %>
     <%= f.input :location_radius, label: "Dans un rayon de (km):" %>
     <%= f.input :price, label: "Prix" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   </div>
     <div class="d-grid gap-2">
       <%= f.button :submit, 'Valider',  class: "btn btn-primary button-orange"%>
