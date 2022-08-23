@@ -7,6 +7,7 @@ class ShowsController < ApplicationController
   def create
     @show = Show.new(show_params)
     @show.user = current_user
+    @show.user.seller = true
     if @show.save
       redirect_to shows_path()
     else
