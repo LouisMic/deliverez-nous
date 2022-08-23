@@ -1,0 +1,30 @@
+<div class="col-10 offset-1">
+  <% my_shows.each do |my_show| %>
+    <div class="card mb-3" class="w-50">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <%= image_tag 'magician.jpg' class:"img-fluid rounded-start"%> c
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= my_show.company %></h5>
+            <p class="card-text"><%= my_show.description %></p>
+            <p class="card-text"><small class="text-muted"><%= my_show.user %></small></p>
+          </div>
+        </div>
+        <div class="card-footer">
+        <ul class="inline-group">
+          <li class="inline-group-item">
+          <%# TODO: Transform in link_to %>
+            <i class="fa-solid fa-pen-to-square orange-icon"></i>
+          </li>
+          <li class="inline-group-item">
+             <%# TODO: Transform in link_to %>
+            <i class="fa-solid fa-pen-to-square orange-icon"></i>
+          </li>
+        </ul>
+        </div>
+      </div>
+</div>
+  <% end %>
+</div>
