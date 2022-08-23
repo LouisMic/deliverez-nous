@@ -9,9 +9,18 @@
   width: 600px;
   margin-left: 450px;
 }
-.formcard{
+.formcard {
   background-color: white;
   box-shadow: 10px;
   padding: 10px;
   margin-top: -50px;
+}
+
+.back {
+  background-color: white;
+  height: 100vh;
+  background-image: image-url("grande_banner_logo.png");
+  background-position: center bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
