@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: url(<%= asset_url("grande_banner_logo.png")%>)">
+  <div class="container">
+    <div class="formcard border shadow" >
+      <%= simple_form_for @booking do |f| %>
+      <%= f.input :address, :label => 'Lieu du spectacle' %>
+      <%# remplacer plus tard et importer le vrai array %>
+      <%= f.input :category, collection:[['concert', 'concert'], ['magie', 'magie']],  :label => 'Catégorie' %>
+      <%= f.input :date, :label => 'Date' %>
+      <%= f.submit 'Recherche', class:"homebtn" %>
+    <% end %>
+    </div>
+  </div>
+</div>
