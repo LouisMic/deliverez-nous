@@ -39,7 +39,7 @@ class ShowsController < ApplicationController
   private
 
   def show_params
-    params.require(:show).permit(:name, :category_id, :description, :company, :location_center, :location_radius, :price)
+    params.require(:show).permit(:name, :category_id, :description, :company, :location_center, :location_radius, :price, photos: [])
   end
 
   def set_show
