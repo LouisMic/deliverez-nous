@@ -46,5 +46,4 @@ class ShowsController < ApplicationController
   def set_show
     @show = Show.find(params[:id])
   end
-
 end
