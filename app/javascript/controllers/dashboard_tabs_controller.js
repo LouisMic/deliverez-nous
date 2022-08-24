@@ -4,23 +4,28 @@ export default class extends Controller {
   static targets = ['tab']
 
   connect(){
-    const selected = document.querySelector('.active');
-    if(selected) selected.classList.toggle('active');
-
-    const lastTab = localStorage.getItem('lastTab')|| 'my_shows'
-    const lastTabElement = document.querySelector(`[data-tab-name=${lastTab}`)
-
-    lastTabElement.classList.add('active');
-  }
-
-  active(event) {
+    const url = window.location.href.split('/')
+    const tab = url[url.length - 1];
     const selected = document.querySelector('.active');
 
-    if(selected) selected.classList.toggle('active');
+    let tabElement = ''
+    switch(tab){
+      case 'seller':
+        selected.classList.remove('active')
+        tabElement = document.querySelector(`[data-tab-name='my-shows']`)
+        tabElement.classList.add('active')
+        break;
+      case 'bookings':
+        selected.classList.remove('active')
+        tabElement = document.querySelector(`[data-tab-name='bookings']`)
+        tabElement.classList.add('active')
+        break;
 
-    event.target.classList.toggle('active')
-    const currentTab = event.target.dataset.tabName
-
-    localStorage.setItem('lastTab', currentTab)
+      default:
+        selected.classList.remove('active')
+        tabElement = document.querySelector(`[data-tab-name='shows']`)
+        tabElement.classList.add('active')
+        break
+    }
   }
 }
