@@ -1,9 +1,9 @@
 require 'faker'
 
+Booking.destroy_all
 Show.destroy_all
 Category.destroy_all
 User.destroy_all
-Booking.destroy_all
 
 # Categories seeding
 categories = %w[concert théâtre dance magie spectacle\ enfant hypnose]
@@ -64,7 +64,7 @@ puts "---Start seed Bookings------"
     show_id: show.id,
     user_id: user.id,
     address: Faker::Address.city,
-    validated: false,
+    validated: false
   )
   new_booking.save!
 end

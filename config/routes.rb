@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :update, :destroy]
   get "dashboard", to: "pages#dashboard"
-  get "dashboard/:seller", to: "pages#dashboard", as: :dashboard_seller
-  get "dashboard/:bookings", to: "pages#dashboard", as: :dashboard_bookings
+  get "dashboard/user_shows", to: "pages#dashboard"
+  get "dashboard/bookings", to: "pages#dashboard"
 end

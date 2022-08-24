@@ -4,14 +4,12 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    if params[:seller]
-      @tabs = params[:seller]
-      @my_shows = Show.where(user_id: current_user)
-    elsif params[:bookings]
+    @shows = Booking.where(user: current_user)
+    @is_seller = current_user.seller
+
+    if @is_seller
+      @user_shows = Show.where(user_id: current_user)
       @bookings = current_user.shows.map {|show| show.bookings }.flatten
-    else
-      @tabs = 'buyer'
-      @shows = Booking.where(user_id: current_user)
     end
   end
 
