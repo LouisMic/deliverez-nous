@@ -6,6 +6,5 @@ export default class extends Controller {
 
   change_photo(event) {
     this.photoTarget.src = event.target.src
-    console.log(photoTarget)
   }
 }
