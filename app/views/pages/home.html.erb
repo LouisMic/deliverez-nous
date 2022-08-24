@@ -1,17 +1,25 @@
-<div class="banner" style="background-image: url(<%= asset_url("newhomebanner.png")%>)">
-<%= link_to "Login", "#", class: "button-login" %>
 
-  <div class="homecontainer">
-    <div class="formcard border shadow" >
-      <%= simple_form_for @booking do |f| %>
-      <%= f.input :address, label: 'Lieu du spectacle' %>
-      <%# remplacer plus tard et importer le vrai array %>
-      <%= f.input :category, collection:[['concert', 'concert'], ['magie', 'magie'], ['théâtre', 'théâtre'], ['spectacle enfant', 'spectacle enfant'], ['mentalist', 'mentalist']], :label => 'Catégorie' %>
-      <%= f.input :date, label:'Date' %>
-      <%= f.submit 'Recherche', class:"button-orange" %>
-    <% end %>
-    </div>
+<div class="banner" style="background-image: url(<%= asset_url("grande_banner.png")%>)">
+  <div class="logo">
+    <%= image_tag asset_url("logo1b.png")%>
   </div>
+
+  <%# <%= link_to "Se connecter", "#", class: "button-login" %>
+
+  <%# <%= link_to "S'enregistrer", "#", class: "button-signin" %>
+
+
+    <div class="homecontainer">
+      <div class="formcard border shadow" >
+        <%= simple_form_for @booking do |f| %>
+          <%= f.input :address, input_html: {value: "Ville ou adresse"} , label: false %>
+          <%# remplacer plus tard et importer le vrai array %>
+          <%= f.input :category, collection:[['concert', 'concert'], ['magie', 'magie'], ['théâtre', 'théâtre'], ['spectacle enfant', 'spectacle enfant'], ['mentalist', 'mentalist']], prompt: "Catégorie", label: false %>
+          <%= f.input :date, label: false, :order => [:day, :month, :year] %>
+          <%= f.submit 'Rechercher', class:"button-orange" %>
+        <% end %>
+      </div>
+    </div>
 </div>
 <%# <div class="homefooter"%>
 <%# </div> %>
