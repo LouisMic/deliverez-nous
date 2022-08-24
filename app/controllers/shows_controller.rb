@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
-  before_action :set_show, only: [:show, :edit, :update]
+  before_action :set_show, only: [:show, :edit, :update, :destroy]
   def new
     @show = Show.new
   end
@@ -35,6 +35,7 @@ class ShowsController < ApplicationController
   end
 
   def destroy
+    @show.destroy
   end
 
   private
