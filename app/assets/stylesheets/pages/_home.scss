@@ -11,6 +11,7 @@
   position: center;
   margin: 0 auto;
   // z-index: 0;
+  // margin-top: 200px;
 }
 .formcard {
   background-color: white;
@@ -38,6 +39,15 @@
   background-image: image-url("grande_banner_logo.png");
   background-position: center bottom;
   background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.backhome {
+  background-color: white;
+  height: 100vh;
+  background-image: image-url("grande_banner.png");
+  background-position: center bottom;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 .logo img {
