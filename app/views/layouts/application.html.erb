@@ -19,7 +19,9 @@
     <div class="navbar-DN">
       <ul class="d-flex justify-content-evenly align-items-center">
         <li class="nav-item">
+          <%= link_to root_path do%>
           <%= image_tag "logo3b.png", class: "mr-auto p-2" %>
+          <%end%>
         </li>
         <li class="nav-item">
           <%= link_to "S'enregistrer", new_user_registration_path, class: "button-orange p-2" %>
