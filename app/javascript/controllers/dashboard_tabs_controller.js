@@ -4,9 +4,13 @@ export default class extends Controller {
   static targets = ['tab']
 
   connect(){
-    const lastTab = document.querySelector(`[data-tab-name=${localStorage.getItem('lastTab')|| 'my_shows'}`)
-    console.log(lastTab)
-    lastTab.parentElement.classList.add('active');
+    const selected = document.querySelector('.active');
+    if(selected) selected.classList.toggle('active');
+
+    const lastTab = localStorage.getItem('lastTab')|| 'my_shows'
+    const lastTabElement = document.querySelector(`[data-tab-name=${lastTab}`)
+
+    lastTabElement.classList.add('active');
   }
 
   active(event) {
