@@ -1,6 +1,22 @@
-.navbar-lewagon {
+.navbar-DN {
   justify-content: space-between;
   background: white;
+  height: 100px;
+}
+
+.navbar-DN ul {
+  list-style: none
+}
+
+.navbar-DN a {
+  text-decoration: none;
+  color: black
+}
+
+.navbar-DN img {
+  height: 90px;
+  width:auto;
+
 }
 
 .navbar-lewagon .navbar-collapse {

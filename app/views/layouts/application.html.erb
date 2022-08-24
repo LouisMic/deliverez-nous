@@ -14,10 +14,29 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-
   <body>
+
+    <div class="navbar-DN">
+      <ul class="d-flex justify-content-evenly align-items-center">
+        <li class="nav-item">
+          <%= image_tag "logo3b.png", class: "mr-auto p-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Se connecter", "#", class: "button-orange p-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "S'identifier", "#", class: "button-orange p-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Tableau de bord", "#", class: "button-orange p-2" %>
+        </li>
+      </ul>
+    </div>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+
+
   </body>
 </html>
