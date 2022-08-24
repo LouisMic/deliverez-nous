@@ -1,7 +1,6 @@
 
 <div class="backhome" >
   <div class="logo">
-    <%= image_tag asset_url("logo1b.png")%>
   </div>
 
   <%# <%= link_to "Se connecter", "#", class: "button-login" %>
@@ -9,8 +8,10 @@
   <%# <%= link_to "S'enregistrer", "#", class: "button-signin" %>
 
 
-    <div class="homecontainer">
-      <div class="formcard border shadow" >
+    <div class="homecontainer" >
+      <div class="formcard border shadow">
+      <%= image_tag asset_url("logo1b.png")%>
+
         <%= simple_form_for @booking do |f| %>
           <%= f.input :address, input_html: {value: "Ville ou adresse"} , label: false %>
           <%# remplacer plus tard et importer le vrai array %>

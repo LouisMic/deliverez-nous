@@ -1,30 +1,20 @@
-// Specific CSS for your home-page
-.banner {
-  background-size:cover;
-  background-position:top;
-  padding: 150px 0;
-  height: 666px;
-}
+
 .homecontainer {
   width: 600px;
-  // margin-left: 450px;
-  position: center;
   margin: 0 auto;
-  // z-index: 0;
-  // margin-top: 200px;
+  background-color: white;
+  // justify-content: center;
 }
 .formcard {
   background-color: white;
   box-shadow: 10px;
-  padding: 10px;
-  margin-top: 50px;
+  padding: 20px;
   height:fit-content;
-  // z-index: 0;
+  // justify-content: center;
 }
 .homefooter {
   display: flex;
-  // height: 300px;
-  padding: 0px 50px;
+  // padding: 0px 50px;
 }
 
 .formcreate {
@@ -49,13 +39,16 @@
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  margin-top: -50px;
 }
-.logo img {
-  position: absolute;
-  top: 30px; left: 40px;
+.homecontainer img {
+  // position: absolute;
+  // top: 120px; left: 40px;
   // height: 100%;
   width: 300px;
-  object-fit: cover;
+  object-fit: contain;
   // margin-top: -50px;
   // z-index: 0;
 }
