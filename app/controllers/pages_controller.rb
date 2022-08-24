@@ -7,6 +7,8 @@ class PagesController < ApplicationController
     if params[:seller]
       @tabs = params[:seller]
       @my_shows = Show.where(user_id: current_user)
+    elsif params[:bookings]
+      @bookings = current_user.shows.map {|show| show.bookings }.flatten
     else
       @tabs = 'buyer'
       @shows = Booking.where(user_id: current_user)
@@ -14,7 +16,5 @@ class PagesController < ApplicationController
   end
 
   def booking
-    @bookings = Booking.show.where(user_id: current_user)
-    raise
   end
 end

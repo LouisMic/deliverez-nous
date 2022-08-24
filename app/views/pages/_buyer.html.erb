@@ -17,6 +17,11 @@
         <div class="card-footer">
         <ul class="list-group list-group-horizontal">
           <li class="list-group-item m-1 hover">
+             <%= link_to show_path(show) do %>
+                <i class="fa-solid fa-magnifying-glass-plus orange-icon stretch-link"></i>
+             <% end %>
+          </li>
+          <li class="list-group-item m-1 hover">
              <%= link_to booking_path(show), data:{turbo_method: :delete, turbo_confirm:'Voulez-vous annuler votre réservation ?'} do %>
               <i class="fa-solid fa-trash-can orange-icon"></i>
              <% end %>
@@ -24,6 +29,6 @@
         </ul>
         </div>
       </div>
-</div>
+    </div>
   <% end %>
 </div>
