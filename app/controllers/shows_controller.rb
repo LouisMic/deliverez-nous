@@ -1,7 +1,7 @@
 class ShowsController < ApplicationController
   before_action :set_show, only: [:show, :edit, :update]
   def new
-    @show = Show.new()
+    @show = Show.new
   end
 
   def create
@@ -9,14 +9,14 @@ class ShowsController < ApplicationController
     @show.user = current_user
     @show.user.seller = true
     if @show.save
-      redirect_to shows_path()
+      redirect_to shows_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def index
-    @shows = Show.all()
+    @shows = Show.all
   end
 
   def show

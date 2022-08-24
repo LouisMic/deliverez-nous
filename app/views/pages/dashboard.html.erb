@@ -8,15 +8,17 @@
     <li class="nav-item" data-dashboard-tabs-target="tab" >
       <%= link_to 'Spectacles', dashboard_path, 'data-tab-name' => 'shows', class:'nav-link'%>
     </li>
-    <li class="nav-item" data-dashboard-tabs-target="tab" data-tab-name="bookings">
-      <a class="nav-link" href="#">Réservations</a>
+    <li class="nav-item" data-dashboard-tabs-target="tab">
+      <%= link_to 'Réservations', dashboard_bookings_path, 'data-tab-name' => 'bookings', class:'nav-link'%>
     </li>
   </ul>
   <div class="row my-3">
     <% if @tabs === 'seller' %>
       <%= render 'seller', my_shows: @my_shows %>
-    <% else %>
+    <% elsif @tabs === 'buyer' %>
       <%= render 'buyer', shows: @shows %>
+    <% else %>
+      <%= render 'calendar', bookings: @bookings %>
     <% end %>
   </div>
 </div>
