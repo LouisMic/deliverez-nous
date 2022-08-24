@@ -1,6 +1,9 @@
  <div class="back">
  <div class="container">
-    <h1>Dashboard Seller</h1>
+    <h1>Dashboard</h1>
+    <div class="row justify-content-end">
+        <%= link_to 'Ajouter un spectacle', new_show_path, class:"button-orange" %>
+    </div>
     <ul class="nav nav-tabs" data-controller="dashboard-tabs" data-action="click->dashboard-tabs#active">
       <li class="nav-item" data-dashboard-tabs-target="tab">
         <%= link_to 'Mes Spectacles', dashboard_seller_path('seller'), 'data-tab-name' => 'my_shows' ,class:'active nav-link'%>
