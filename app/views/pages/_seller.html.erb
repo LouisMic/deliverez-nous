@@ -3,7 +3,7 @@
     <div class="card mb-3 shadow w-50">
       <div class="row g-0">
         <div class="col-md-4">
-          <%= image_tag 'magician.jpg', class:"img-fluid rounded-start"%>
+          <%= cl_image_tag my_show.photos[0].key, class:"img-fluid rounded-start"%>
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -17,7 +17,7 @@
         <div class="card-footer">
         <ul class="list-group list-group-horizontal">
           <li class="list-group-item m-1">
-          <%= link_to show_path(my_show) do %>
+          <%= link_to edit_show_path(my_show) do %>
             <i class="fa-solid fa-pen-to-square orange-icon"></i>
           <% end %>
           </li>
