@@ -3,18 +3,15 @@
   width: 600px;
   margin: 0 auto;
   background-color: white;
-  // justify-content: center;
 }
 .formcard {
   background-color: white;
   box-shadow: 10px;
   padding: 20px;
   height:fit-content;
-  // justify-content: center;
 }
 .homefooter {
   display: flex;
-  // padding: 0px 50px;
 }
 
 .formcreate {
@@ -32,7 +29,7 @@
   background-repeat: no-repeat;
 }
 
-.backhome {
+.backhomecentered {
   background-color: white;
   height: 100vh;
   background-image: image-url("grande_banner.png");
@@ -43,14 +40,21 @@
   align-items: center;
   margin-top: -50px;
 }
+
+.backhome {
+  background-color: white;
+  height: 100vh;
+  background-image: image-url("grande_banner.png");
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  // display: flex;
+  // align-items: center;
+  // margin-top: -50px;
+}
 .homecontainer img {
-  // position: absolute;
-  // top: 120px; left: 40px;
-  // height: 100%;
   width: 300px;
   object-fit: contain;
-  // margin-top: -50px;
-  // z-index: 0;
 }
 
 h1, h2 {
