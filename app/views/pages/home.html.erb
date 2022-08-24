@@ -10,7 +10,9 @@
 
     <div class="homecontainer" >
       <div class="formcard border shadow">
+      <div class="d-flex justify-content-center">
       <%= image_tag asset_url("logo1b.png")%>
+      </div>
 
         <%= simple_form_for @booking do |f| %>
           <%= f.input :address, input_html: {value: "Ville ou adresse"} , label: false %>
