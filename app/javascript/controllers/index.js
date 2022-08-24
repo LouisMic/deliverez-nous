@@ -6,6 +6,8 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 import dashboardTabsController from "./dashboard_tabs_controller"
+import changePhotoInShow from "./change_photo_in_show"
 
 application.register("hello", HelloController)
 application.register("dashboard-tabs", dashboardTabsController)
+application.register("change-photo-in-show", changePhotoInShow)

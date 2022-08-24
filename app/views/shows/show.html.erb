@@ -1,8 +1,8 @@
 <div class="backhome pt-5">
-  <div class="offset-2 col-8 d-grid shadow">
+  <div class="offset-2 col-8 d-grid shadow" data-controller="change-photo-in-show">
     <div class="row">
       <div class="col-4">
-      <%= cl_image_tag @show.photos[0].key, class:"w-100 img-fluid"%>
+      <%= cl_image_tag @show.photos[0].key, class:"w-100 img-fluid", "data-change-photo-in-show-target" => "photo"%>
       </div>
       <div class="col-8 d-flex flex-column justify-content-between">
         <div class="card-title mt-3">
@@ -14,7 +14,7 @@
         </div>
         <div class="mb-3">
           <% @show.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height:150, crop: :scale %>
+            <%= cl_image_tag photo.key, height:150, crop: :scale, "data-action" => "click->change-photo-in-show#change_photo" %>
           <% end %>
         </div>
       </div>
