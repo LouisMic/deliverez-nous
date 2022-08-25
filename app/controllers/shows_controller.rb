@@ -23,13 +23,13 @@ class ShowsController < ApplicationController
     @latitude = location[0].latitude
     @longitude = location[0].longitude
     @category = params[:booking][:category]
-    @date = Date.new(params[:booking]['date(1i)'].to_i, params[:booking]['date(2i)'].to_i, params[:booking]['date(3i)'].to_i)
+    @date = Date.new(params[:booking]['start_time(1i)'].to_i, params[:booking]['start_time(2i)'].to_i, params[:booking]['start_time(3i)'].to_i)
     @all_shows = Show.where(category_id: @category)
     @selected_shows = @all_shows.select do |show|
       show.distance_to([@latitude, @longitude]) < show.location_radius
     end
     @shows = @selected_shows.reject do |show|
-      show.bookings.where(date: @date).present?
+      show.bookings.where(start_time: @date).present?
     end
   end
 
