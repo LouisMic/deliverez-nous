@@ -4,9 +4,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    raise
+    # raise
     @address = params[:address]
-    @booking = Booking.create(@address,...)
+    # @booking = Booking.create(@address,...)
   end
 
   def index
