@@ -62,7 +62,7 @@ puts "---Start seed Bookings------"
   user = User.all.sample
   puts "Create a new booking"
   new_booking = Booking.new(
-    date: Faker::Date.between(from: '2022-08-24', to: '2022-12-31'),
+    start_time: Faker::Date.between(from: '2022-08-24', to: '2022-12-31'),
     show_id: show.id,
     user_id: user.id,
     address: Faker::Address.city,
