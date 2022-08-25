@@ -1,22 +1,20 @@
-<div class="backhome pt-5">
-  <div class="offset-2 col-8 d-grid shadow bg-white" data-controller="change-photo-in-show">
-    <div class="row">
-      <div class="col-4">
-      <%= cl_image_tag @show.photos[0].key, class:"w-100 img-fluid", "data-change-photo-in-show-target" => "photo"%>
+<div class="offset-2 col-8 d-grid shadow bg-white" data-controller="change-photo-in-show">
+  <div class="row">
+    <div class="col-4">
+    <%= cl_image_tag @show.photos[0].key, class:"w-100 img-fluid", "data-change-photo-in-show-target" => "photo"%>
+    </div>
+    <div class="col-8 d-flex flex-column justify-content-between">
+      <div class="card-title mt-3">
+        <h2><%= @show.name %></h2>
+        <h4>by <%= @show.company %></h4>
       </div>
-      <div class="col-8 d-flex flex-column justify-content-between">
-        <div class="card-title mt-3">
-          <h2><%= @show.name %></h2>
-          <h4>by <%= @show.company %></h4>
-        </div>
-        <div class="flex-grow-1 d-flex align-items-center mb-2 me-4">
-          <p><%= @show.description %></p>
-        </div>
-        <div class="widgets mb-3">
-          <% @show.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, "data-action" => "click->change-photo-in-show#change_photo" %>
-          <% end %>
-        </div>
+      <div class="flex-grow-1 d-flex align-items-center mb-2 me-4">
+        <p><%= @show.description %></p>
+      </div>
+      <div class="widgets mb-3">
+        <% @show.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, "data-action" => "click->change-photo-in-show#change_photo" %>
+        <% end %>
       </div>
     </div>
   </div>
