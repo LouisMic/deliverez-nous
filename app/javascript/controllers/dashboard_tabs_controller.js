@@ -21,7 +21,6 @@ export default class extends Controller {
         tabElement.classList.add('active')
         user_shows.classList.remove('d-none')
         shows.classList.add('d-none')
-        console.log('toto')
         bookings.classList.add('d-none')
         break;
       case 'bookings':

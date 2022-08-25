@@ -17,7 +17,6 @@ class PagesController < ApplicationController
       user_shows_ids = current_user.shows.map { |show| show.id }
 
       user_bookings = @bookings.select { |booking| user_shows_ids.include?(booking.show_id) }
-      raise
     end
   end
 
