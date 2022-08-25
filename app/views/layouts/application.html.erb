@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/louismic/image/upload/v1661262700/logo4b_rvhag2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/louismic/image/upload/v1661432123/LogoDN-backless_t3zsvp.png">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,28 +18,30 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
-    <div class="navbar-DN">
-      <ul class="d-flex justify-content-evenly align-items-center">
-        <li class="nav-item">
-        <%= link_to root_path do %>
-          <%= image_tag "logo3b.png", class: "mr-auto p-2" %>
-          <%end%>
-        </li>
-        <li class="nav-item">
-          <%= link_to "S'enregistrer", new_user_registration_path, class: "button-orange p-2" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "S'identifier", new_user_session_path, class: "button-orange p-2" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Tableau de bord", dashboard_path, class: "button-orange p-2" %>
-        </li>
-      </ul>
-    </div>
-    <div class="back">
-      <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <div class="background">
+      <div class="navbar-DN">
+        <ul class="d-flex justify-content-evenly align-items-center">
+          <li class="nav-item">
+          <%= link_to root_path do %>
+            <%= image_tag "logo3b.png", class: "mr-auto p-2" %>
+            <%end%>
+          </li>
+          <li class="nav-item">
+            <%= link_to "S'enregistrer", new_user_registration_path, class: "button-orange p-2" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "S'identifier", new_user_session_path, class: "button-orange p-2" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Tableau de bord", dashboard_path, class: "button-orange p-2" %>
+          </li>
+        </ul>
+      </div>
+      <div style="margin-bottom: -30px">
+        <%= yield %>
+      </div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
     </div>
   </body>
 </html>
