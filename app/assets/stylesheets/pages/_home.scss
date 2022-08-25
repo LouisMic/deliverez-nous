@@ -17,41 +17,27 @@
   background-color: rgba(255, 255, 255, 0.273);
   box-shadow: 10px rgba(0, 0, 0, 0.126);
   padding: 10px;
-  // margin-bottom: 30px;
   border-radius: 5px;
 }
 
-.back {
+.background {
   background-color: white;
+  min-height: 100vh;
   background-image: image-url("grande_banner.png");
   background-position: center bottom;
   background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
 }
 
 .backhomecentered {
-  height: 100vh;
+  margin-top: 50px;
   display: flex;
   align-items: center;
-  margin-top: -50px;
 }
 
 .homecontainer img {
   width: 300px;
   object-fit: contain;
-}
-
-h1, h2 {
-  color: #42381e;
-  font-family: 'Shadows Into Light', cursive;
-  font-weight: bold;
-  text-shadow: 1px 1px #715f3235;
-  padding: 30px 10px;
-}
-
-a {
-  text-decoration: none;
-  color: #42381e
 }
