@@ -6,7 +6,7 @@
       <div class="d-flex justify-content-center">
       <%= image_tag asset_url("logo1b.png")%>
       </div>
-
+        <h5 class="text-center"><em>Trouvez votre bonheur parmi nos <%=Show.count%> spectacles !</em></h5>
         <%= simple_form_for @booking, url: shows_path, method: :get do |f| %>
           <%= f.input :address, input_html: {value: "Ville ou adresse"} , label: false %>
           <%# remplacer plus tard et importer le vrai array %>
