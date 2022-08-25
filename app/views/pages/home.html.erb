@@ -7,7 +7,7 @@
       <%= image_tag asset_url("logo1b.png")%>
       </div>
 
-        <%= simple_form_for @booking do |f| %>
+        <%= simple_form_for @booking, url: shows_path, method: :get do |f| %>
           <%= f.input :address, input_html: {value: "Ville ou adresse"} , label: false %>
           <%# remplacer plus tard et importer le vrai array %>
           <%= f.input :category, collection: Category.all, prompt: "Catégorie", label: false %>

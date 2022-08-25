@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @booking = Booking.new()
+    @booking = Booking.new
   end
 
   def dashboard
@@ -18,12 +18,6 @@ class PagesController < ApplicationController
 
       user_bookings = @bookings.select { |booking| user_shows_ids.include?(booking.show_id) }
     end
-  end
-
-  def create
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
-    redirect_to shows_path
   end
 
   private

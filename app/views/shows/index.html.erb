@@ -1,3 +1,7 @@
 <% @shows.each do |show| %>
-<%= show.name %>
+  <%= show.name %>
 <% end %>
+
+<div id="show-modal">
+  <%= button_to "Réserver", bookings_path(address: @address, category: @category, date: @date), method: :post %>
+</div>

@@ -6,6 +6,7 @@ class ShowsController < ApplicationController
 
   def create
     @show = Show.new(show_params)
+    @show.geocode
     @show.user = current_user
     if @show.save
       @show.save
@@ -17,8 +18,19 @@ class ShowsController < ApplicationController
   end
 
   def index
-    @shows = Show.all
-    # @shows = Show.where().near()
+    @address = params[:booking][:address]
+    location = Geocoder.search(@address)
+    @latitude = location[0].latitude
+    @longitude = location[0].longitude
+    @category = params[:booking][:category]
+    @date = Date.new(params[:booking]['date(1i)'].to_i, params[:booking]['date(2i)'].to_i, params[:booking]['date(3i)'].to_i)
+    @all_shows = Show.where(category_id: @category)
+    @selected_shows = @all_shows.select do |show|
+      show.distance_to([@latitude, @longitude]) < show.location_radius
+    end
+    @shows = @selected_shows.reject do |show|
+      show.bookings.where(date: @date).present?
+    end
   end
 
   def show
@@ -48,5 +60,9 @@ class ShowsController < ApplicationController
 
   def set_show
     @show = Show.find(params[:id])
+  end
+
+  def booking_params
+    params.require(:booking).permit(:address, :category, :date)
   end
 end
