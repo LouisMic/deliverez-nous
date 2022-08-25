@@ -31,7 +31,7 @@
             <%= link_to "Tableau de bord", dashboard_path, class: "button-orange nav-but" %>
           </li>
            <li class="nav-item">
-            <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "button-orange nav-but" %>
+            <%= button_to("Se déconnecter", destroy_user_session_path, method: :delete, class: "button-orange nav-but") %>
           </li>
         <% else %>
           <li class="nav-item">

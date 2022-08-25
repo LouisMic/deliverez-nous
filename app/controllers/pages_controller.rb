@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @shows = Booking.where(user: current_user)
-    @is_seller = current_user.seller
+    @is_seller = current_user&.seller
 
     if @is_seller
       @user_shows = Show.where(user_id: current_user)

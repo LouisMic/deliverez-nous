@@ -5,5 +5,4 @@ class ApplicationController < ActionController::Base
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name address seller])
   end
-
 end
