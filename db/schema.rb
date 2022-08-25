@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_23_135328) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_25_104948) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_135328) do
     t.boolean "validated", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["show_id"], name: "index_bookings_on_show_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -71,6 +73,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_135328) do
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["category_id"], name: "index_shows_on_category_id"
     t.index ["user_id"], name: "index_shows_on_user_id"
   end

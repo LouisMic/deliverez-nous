@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @booking = Booking.new
+    @booking = Booking.new()
   end
 
   def dashboard
@@ -20,6 +20,15 @@ class PagesController < ApplicationController
     end
   end
 
-  def booking
+  def create
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    redirect_to shows_path
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:date, :address, :user_id, :show_id)
   end
 end
