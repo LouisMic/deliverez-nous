@@ -1,25 +1,24 @@
 .button-orange {
   background-color: #E8A803 !important;
   border: #4e3801;
-  box-shadow: 3px 3px #4e38015d;
+  box-shadow: 1px 3px 3px #4e38015d;
   border-radius: 3px;
   padding: 3px 20px 3px 20px;
-  max-width: 10em;
   text-decoration: none;
   text-align: center;
-  color:#000
+  color:#fffdf7 !important;
 }
 .button-login {
   position: absolute;
   top: 30px; right: 40px;
   background-color: #E8A803 !important;
   border: #4e3801;
-  box-shadow: 3px 3px #4e38015d;
+  box-shadow: 1px 3px 3px #4e38015d;
   border-radius: 3px;
   // margin-right: 10px;
   // margin-top: 10px;
   text-decoration: none;
-  color: black;
+  color:#fffdf7;
   padding: 3px 20px 3px 20px;
 }
 .button-signin {
@@ -27,15 +26,24 @@
   top: 30px; right: 280px;
   background-color: #E8A803 !important;
   border: #4e3801;
-  box-shadow: 3px 3px #4e38015d;
+  box-shadow: 1px 3px 3px #4e38015d;
   border-radius: 3px;
   // margin-right: 10px;
   // margin-top: 10px;
   text-decoration: none;
-  color: black;
+  color:#fffdf7;
   padding: 3px 20px 3px 20px;
 }
 a:hover {
-  color: black;
+  color:#ffffff;
+  text-shadow: 1px 0 #4e3801, -1px 0 #4e3801, 0 1px #4e3801, 0 -1px #4e3801,
+               1px 1px #4e3801, -1px -1px #4e3801, 1px -1px #4e3801, -1px 1px #4e3801;
+  opacity: 0.8;
+}
+
+.button-orange:hover {
+  color:#ffffff;
+  text-shadow: 1px 0 #4e3801, -1px 0 #4e3801, 0 1px #4e3801, 0 -1px #4e3801,
+               1px 1px #4e3801, -1px -1px #4e3801, 1px -1px #4e3801, -1px 1px #4e3801;
   opacity: 0.8;
 }

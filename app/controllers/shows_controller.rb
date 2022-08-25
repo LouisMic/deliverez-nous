@@ -7,8 +7,9 @@ class ShowsController < ApplicationController
   def create
     @show = Show.new(show_params)
     @show.user = current_user
-    @show.user.seller = true
     if @show.save
+      @show.save
+      @show.user.update(seller: true)
       redirect_to shows_path
     else
       render :new, status: :unprocessable_entity
@@ -17,6 +18,7 @@ class ShowsController < ApplicationController
 
   def index
     @shows = Show.all
+    # @shows = Show.where().near()
   end
 
   def show

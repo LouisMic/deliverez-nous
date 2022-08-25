@@ -1,6 +1,6 @@
-<h2 class="text-center mt-3">Sign up</h2>
+<h2 class="text-center mt-1">Créer un compte</h2>
 
-<div class="container offset-4 col-4 mt-3">
+<div class="container offset-4 col-4 formcreate">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
   data: {turbo: false}) do |f| %>
@@ -9,28 +9,33 @@
   <div class="form-inputs">
 
     <%= f.input :name,
+                label: "Nom",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "name" }%>
     <%= f.input :email,
+                label: "Courriel",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
+                label: "Mot de passe",
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
+                label: "Confirmation du mot de passe",
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :address,
+                label: "Adresse",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "address" }%>
   </div>
 
   <div class="form-actions d-grid gap-2">
-    <%= f.button :submit, "Sign up", class: "btn btn-primary button-orange" %>
+    <%= f.button :submit, "Créer un compte", class: "btn btn-lg btn-block button-orange" %>
   </div>
 <% end %>
 
@@ -38,3 +43,4 @@
 <%= render "devise/shared/links" %>
 </div>
 </div>
+<br>

@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @booking = Booking.new
+    @booking = Booking.new()
   end
 
   def dashboard
@@ -13,8 +13,5 @@ class PagesController < ApplicationController
       @my_shows_bookings = Booking.where(show_id: current_user.shows.pluck(:id))
       @bookings = @my_shows_bookings.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
     end
-  end
-
-  def booking
   end
 end

@@ -1,4 +1,3 @@
-
 <div class="backhomecentered" >
   <div class="logo">
   </div>
@@ -11,7 +10,7 @@
         <%= simple_form_for @booking do |f| %>
           <%= f.input :address, input_html: {value: "Ville ou adresse"} , label: false %>
           <%# remplacer plus tard et importer le vrai array %>
-          <%= f.input :category, collection:[['concert', 'concert'], ['magie', 'magie'], ['théâtre', 'théâtre'], ['spectacle enfant', 'spectacle enfant'], ['mentalist', 'mentalist']], prompt: "Catégorie", label: false %>
+          <%= f.input :category, collection: Category.all, prompt: "Catégorie", label: false %>
           <%= f.input :date, label: false, :order => [:day, :month, :year] %>
           <%= f.submit 'Rechercher', class:"button-orange" %>
         <% end %>
