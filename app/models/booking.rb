@@ -4,5 +4,6 @@ class Booking < ApplicationRecord
   has_one :category, through: :show
 
 
-  validates :date, :address, presence: true
+  validates :start_time, :address, presence: true
+
 end

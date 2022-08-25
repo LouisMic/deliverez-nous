@@ -22,7 +22,42 @@
     <%= render 'shows', shows: @shows %>
     <% if @is_seller%>
         <%= render 'user_shows', user_shows: @user_shows %>
-        <%= render 'bookings', bookings: @bookings %>
+        <div class="row my-3 d-none" id="bookings">
+          <div class="col-10 offset-1">
+            <%= month_calendar(events: @bookings) do |date, bookings | %>
+              <%= date.day %>
+              <% bookings.each do |booking|%>
+              <div class="card w-100 rounded">
+                <div class="card-body <%= booking.validated ? 'bg-success' : 'bg-secondary' %> text-light">
+                  <h5 class="card-title">
+                    <strong>Spectacle:</strong>
+                    <%= booking.show.name %>
+                  </h5>
+                  <h6 class="card-subtitle pb-2">
+                    <strong>Company:</strong>
+                    <%=booking.show.company %>
+                  </h6>
+                  <h6 class="card-subtitle pb-2">
+                    <strong>Client:</strong>
+                    <%=booking.user.name %>
+                  </h6>
+                  <p class="card-text">
+                    <%= booking.user.email %>
+                  </p>
+                </div>
+                <div class="card-footer d-flex justify-content-evenly">
+                <% if !booking.validated %>
+                  <%= link_to 'Confirmer', booking_path(booking), class:'card-link', data:{turbo_method: :patch, turbo_confirm:'Confirmer le spectacle ?'} %>
+                  <%= link_to 'Annuler', booking_path(booking), class:'card-link', data:{turbo_method: :delete, turbo_confirm:'Annuler ce spectacle ?'} %>
+                  <% else %>
+                  <strong class="text-dark">Confirmé!</strong>
+                <% end %>
+                </div>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
     <% end %>
 </div>
 </div>
