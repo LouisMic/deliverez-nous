@@ -11,7 +11,7 @@ class ShowsController < ApplicationController
     if @show.save
       @show.save
       @show.user.update(seller: true)
-      redirect_to shows_path
+      redirect_to dashboard_user_shows_path
     else
       render :new, status: :unprocessable_entity
     end
