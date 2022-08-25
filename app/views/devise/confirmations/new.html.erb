@@ -6,6 +6,7 @@
 
   <div class="form-inputs formcreate">
     <%= f.input :email,
+                label: "Courriel",
                 required: true,
                 autofocus: true,
                 value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
