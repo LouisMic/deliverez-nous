@@ -29,15 +29,15 @@
               <div class="card w-100 rounded">
                 <div class="card-body <%= booking.validated ? 'bg-success' : 'bg-secondary' %> text-light">
                   <h5 class="card-title">
-                    <strong>Spectacle:</strong>
+                    <strong>Spectacle : </strong>
                     <%= booking.show.name %>
                   </h5>
                   <h6 class="card-subtitle pb-2">
-                    <strong>Company:</strong>
+                    <strong>Companie : </strong>
                     <%=booking.show.company %>
                   </h6>
                   <h6 class="card-subtitle pb-2">
-                    <strong>Client:</strong>
+                    <strong>Client : </strong>
                     <%=booking.user.name %>
                   </h6>
                   <p class="card-text">
@@ -49,7 +49,7 @@
                   <%= link_to 'Confirmer', booking_path(booking), class:'card-link', data:{turbo_method: :patch, turbo_confirm:'Confirmer le spectacle ?'} %>
                   <%= link_to 'Annuler', booking_path(booking), class:'card-link', data:{turbo_method: :delete, turbo_confirm:'Annuler ce spectacle ?'} %>
                   <% else %>
-                  <strong class="text-dark">Confirmé!</strong>
+                  <strong class="text-dark">Confirmé !</strong>
                 <% end %>
                 </div>
               </div>
