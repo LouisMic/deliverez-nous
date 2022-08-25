@@ -6,7 +6,7 @@ Category.destroy_all
 User.destroy_all
 
 # Categories seeding
-categories = %w[concert théâtre dance magie spectacle\ enfant hypnose]
+categories = %w[concert théâtre danse magie spectacle\ enfant hypnose]
 puts "*****Start seeding categories!!*******"
 categories.each do |category|
 
