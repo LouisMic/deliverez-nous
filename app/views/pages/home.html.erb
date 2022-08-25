@@ -9,7 +9,6 @@
 
         <%= simple_form_for @booking do |f| %>
           <%= f.input :address, input_html: {value: "Ville ou adresse"} , label: false %>
-          <%# remplacer plus tard et importer le vrai array %>
           <%= f.input :category, collection: Category.all, prompt: "Catégorie", label: false %>
           <%= f.input :start_time, label: false, :order => [:day, :month, :year] %>
           <%= f.submit 'Rechercher', class:"button-orange" %>
@@ -17,5 +16,3 @@
       </div>
     </div>
 </div>
-<%# <div class="homefooter"%>
-<%# </div> %>
