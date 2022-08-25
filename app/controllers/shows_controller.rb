@@ -38,6 +38,7 @@ class ShowsController < ApplicationController
 
   def destroy
     @show.destroy
+    redirect_to dashboard_user_shows_path, notice: 'Spectacle supprimé.'
   end
 
   private

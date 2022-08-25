@@ -4,7 +4,7 @@ class Booking < ApplicationRecord
   has_one :category, through: :show
 
 
-  validates :date, :address, presence: true
+  validates :start_time, :address, presence: true
   # geocoded_by :address
   # after_validation :geocode, if: :will_save_change_to_address?
 end

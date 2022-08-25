@@ -1,7 +1,12 @@
-<div class="offset-2 col-8 d-grid shadow bg-white" data-controller="change-photo-in-show">
-  <div class="row">
-    <div class="col-4">
-    <%= cl_image_tag @show.photos[0].key, class:"w-100 img-fluid", "data-change-photo-in-show-target" => "photo"%>
+<div class="backhome pt-5">
+  <div class="offset-2 col-8 d-grid shadow bg-white" data-controller="change-photo-in-show">
+    <div class="row">
+      <div class="col-4">
+       <% if @show.photos[0] %>
+      <%= cl_image_tag @show.photos[0].key, class:"w-100 img-fluid", "data-change-photo-in-show-target" => "photo"%>
+      <% else %>
+         <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid rounded-start h-100 w-100" %>
+      <% end %>
     </div>
     <div class="col-8 d-flex flex-column justify-content-between">
       <div class="card-title mt-3">
