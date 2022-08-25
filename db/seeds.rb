@@ -47,7 +47,9 @@ puts "*****Start seeding Users*****"
       description: Faker::Lorem.paragraph,
       location_center: Faker::Address.city,
       location_radius: rand(10..100),
-      price: rand(50..200)
+      price: rand(50..200),
+      latitude: rand(30..60),
+      longitude: rand(0..20)
     )
     new_show.save!
     puts "Store new show => #{new_show.name}"
