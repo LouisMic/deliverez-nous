@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row vh-100">
+    <div class="col-6 offset-3 align-self-center">
+      <ul class="list-group shadow">
+        <li class="list-group-item text-center">
+          <%# <div class="text-center"> %>
+            <h1>Votre réservation</h1>
+            <%= image_tag asset_url('logo4b.png'), class:'rounded-circle w-25', alt:'image du spectacle'%>
+          <%# </div> %>
+        </li>
+        <li class="list-group-item justify-content-center d-flex">
+          <h5 class="p-0">Spectacle&nbsp;:&nbsp;</h5>
+          <p>Nom du spectacle</p>
+        </li>
+        <li class="list-group-item justify-content-center align-middle d-flex">
+          <h5 class="p-0">Companie&nbsp;:&nbsp; </h5>
+          <p>Nom de la companie</p>
+        </li>
+        <li class="list-group-item justify-content-center d-flex">
+          <h5 class="p-0">Intervenant&nbsp;:&nbsp;</h5>
+          <p>Nom du créateur</p>
+        </li>
+        <li class="list-group-item justify-content-center d-flex">
+          <h5 class="p-0">Prix&nbsp;:&nbsp;</h5>
+          <p>Prix du spectacle</p>
+        </li>
+        <li class="list-group-item text-center">
+          <%= link_to 'Mes réservations', dashboard_path, class:'button-orange' %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
