@@ -1,6 +1,6 @@
-<h2 class="text-center mt-3">Sign up</h2>
+<h2 class="text-center mt-1">Créer un compte</h2>
 
-<div class="container offset-4 col-4 mt-3">
+<div class="container offset-4 col-4 formcreate">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
   data: {turbo: false}) do |f| %>
@@ -30,7 +30,7 @@
   </div>
 
   <div class="form-actions d-grid gap-2">
-    <%= f.button :submit, "Sign up", class: "btn btn-primary button-orange" %>
+    <%= f.button :submit, "Créer un compte", class: "btn btn-lg btn-block button-orange" %>
   </div>
 <% end %>
 
