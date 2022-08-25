@@ -18,6 +18,7 @@ class ShowsController < ApplicationController
 
   def index
     @shows = Show.all
+    # @shows = Show.where().near()
   end
 
   def show
