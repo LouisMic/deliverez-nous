@@ -28,7 +28,7 @@
               <% bookings.each do |booking|%>
               <div class="card w-100 rounded">
                 <div class="card-body <%= booking.validated ? 'bg-success' : 'bg-secondary' %> text-light">
-                  <h5 class="card-title">
+                  <h5 class="card-title text-light">
                     <strong>Spectacle : </strong>
                     <%= booking.show.name %>
                   </h5>
@@ -48,6 +48,9 @@
                 <% if !booking.validated %>
                   <%= link_to 'Confirmer', booking_path(booking), class:'card-link', data:{turbo_method: :patch, turbo_confirm:'Confirmer le spectacle ?'} %>
                   <%= link_to 'Annuler', booking_path(booking), class:'card-link', data:{turbo_method: :delete, turbo_confirm:'Annuler ce spectacle ?'} %>
+                  <%= link_to show_path(booking.show) do %>
+                    <i class="fa-solid fa-magnifying-glass-plus orange-icon"></i>
+                  <% end %>
                   <% else %>
                   <strong class="text-dark">Confirmé !</strong>
                 <% end %>

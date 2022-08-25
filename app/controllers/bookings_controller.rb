@@ -12,6 +12,9 @@ class BookingsController < ApplicationController
   def index
   end
 
+  def show
+  end
+
   def update
     @booking.update(validated: true)
     redirect_to dashboard_bookings_path, notice: 'Spectacle confirmé avec succès!'
