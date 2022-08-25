@@ -2,17 +2,23 @@
     <% user_shows.each do |user_show| %>
       <div class="col-4">
         <div class="card mb-3 shadow">
+          <div class="card-header">
+              <strong>Company:</strong>
+              <%=user_show.company %>
+          </div>
           <div class="row g-0">
             <div class="col-md-4">
-            <% if user_show.photos[0] %>
-              <%= cl_image_tag user_show.photos[0].key, class:"img-fluid rounded-start h-100 w-100"%>
+              <% if user_show.photos[0] %>
+                <%= cl_image_tag user_show.photos[0].key, class:"img-fluid rounded-start h-100 w-100"%>
               <% else %>
-              <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid rounded-start h-100 w-100" %>
+                <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid rounded-start h-100 w-100" %>
               <% end %>
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h4 class="card-title"><%= user_show.company %></h4>
+                <h6 class="card-title">
+                   <%= user_show.name %>
+                </h6>
                 <p class="card-text"><%= user_show.description %></p>
                 <div>
                   <p class="card-text"><small class="text-muted"><strong>Créateur:</strong> <%= user_show.user.name %></small></p>
