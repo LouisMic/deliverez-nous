@@ -1,47 +1,44 @@
-<div id="user-shows" class="row my-3">
+<div id="user-shows" class="row my-3" data-controller="expand-card" data-expand-card-target="search">
     <% @shows.each do |show| %>
-      <div class="col-4">
-        <div class="card mb-3 shadow">
-          <div class="card-header">
-              <strong>Company:</strong>
-              <%=show.company %>
-          </div>
-          <div class="row g-0">
-            <div class="col-md-4">
-              <% if show.photos[0] %>
-                <%= cl_image_tag show.photos[0].key, class:"img-fluid rounded-start h-100 w-100"%>
-              <% else %>
-                <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid rounded-start h-100 w-100" %>
-              <% end %>
+        <div class="col-4">
+          <div class="card mb-3 shadow" data-action="click->expand-card#modal">
+            <div class="card-header">
+                <strong>Company:</strong>
+                <%=show.company %>
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h6 class="card-title">
-                   <%= show.name %>
-                </h6>
-                <p class="card-text"><%= show.description %></p>
-                <div>
-                  <p class="card-text"><small class="text-muted"><strong>Créateur:</strong> <%= show.user.name %></small></p>
-                </div>
-                  <span><strong>Prix:</strong> <%= show.price%></span>
-              </div>
-            </div>
-            <div class="card-footer">
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item m-1">
-              <%= link_to edit_show_path(show) do %>
-                <i class="fa-solid fa-pen-to-square orange-icon"></i>
-              <% end %>
-              </li>
-              <li class="list-group-item m-1 hover">
-                <%= link_to show_path(show), data:{turbo_method: :delete, turbo_confirm:'Êtes vous sûr de vouloir supprimer ce spectacle ?'} do %>
-                  <i class="fa-solid fa-trash-can orange-icon"></i>
+            <div class="row g-0">
+              <div class="col-md-4">
+                <% if show.photos[0] %>
+                  <%= cl_image_tag show.photos[0].key, class:"img-fluid rounded-start h-100 w-100"%>
+                <% else %>
+                  <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid rounded-start h-100 w-100" %>
                 <% end %>
-              </li>
-            </ul>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h6 class="card-title">
+                    <%= show.name %>
+                  </h6>
+                  <p class="card-text"><%= show.description %></p>
+                  <div>
+                    <p class="card-text"><small class="text-muted"><strong>Créateur:</strong> <%= show.user.name %></small></p>
+                  </div>
+                    <span><strong>Prix:</strong> <%= show.price%></span>
+                </div>
+              </div>
+              <div class="card-footer">
+              <ul class="list-group list-group-horizontal">
+                <%# <li class="list-group-item m-1">
+                <%# <%= link_to show_path(show) do %>
+                <%#   <i class="fa-solid fa-magnifying-glass-plus orange-icon"></i>
+                <%# <% end %>
+                <%# </li> %>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     <% end %>
 </div>
+
+<%# <%= render "modal", show:   %>
