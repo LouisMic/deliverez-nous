@@ -18,7 +18,7 @@
       </div>
       <div class="widgets mb-3">
         <% @show.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, "data-action" => "click->change-photo-in-show#change_photo" %>
+          <%= cl_image_tag photo.key, "data-action" => "click->change-photo-in-show#change_photo", "style" => "cursor: pointer"  %>
         <% end %>
       </div>
     </div>
