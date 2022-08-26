@@ -4,10 +4,11 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-import dashboardTabsController from "./dashboard_tabs_controller"
-import changePhotoInShow from "./change_photo_in_show"
+import DashboardTabsController from "./dashboard_tabs_controller"
+application.register("dashboard-tabs", DashboardTabsController)
 
+import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-application.register("dashboard-tabs", dashboardTabsController)
-application.register("change-photo-in-show", changePhotoInShow)
+
+import MapController from "./map_controller"
+application.register("map", MapController)

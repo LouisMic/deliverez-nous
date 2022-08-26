@@ -3,7 +3,7 @@
     <div class="col-4">
       <div class="card m-2 shadow">
         <div class="card-header">
-            <strong>Company:</strong>
+            <strong>Companie&nbsp;:&nbsp;</strong>
              <%=show.show.company %>
         </div>
         <div class="row g-0">
@@ -11,7 +11,7 @@
             <% if show.show.photos[0] %>
               <%= cl_image_tag show.show.photos[0].key, class:"img-fluid h-100 w-100 rounded-start"%>
             <% else %>
-              <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid h-100 w-100 rounded-start" %>
+                <%= image_tag asset_url("logo4b.png"), class:"img-fluid rounded-start h-auto w-100" %>
             <% end %>
           </div>
           <div class="col-md-8">
@@ -21,15 +21,15 @@
               </h4>
               <p class="card-text"><%= show.show.description %></p>
               <div>
-                <p class="card-text"><small class="text-muted"><strong>Créateur:</strong> <%= show.show.user.name %></small></p>
+                <p class="card-text"><small class="text-muted"><strong>Créateur&nbsp;:&nbsp;</strong> <%= show.show.user.name %></small></p>
               </div>
-              <span><strong>Prix:</strong> <%=show.show.price%></span>
+              <span><strong>Prix&nbsp:&nbsp;</strong> <%=show.show.price%></span>
             </div>
           </div>
           <div class="card-footer">
           <ul class="list-group list-group-horizontal">
             <li class="list-group-item m-1 hover">
-              <%= link_to show_path(show.show) do %>
+              <%= link_to booking_path(show.show) do %>
                   <i class="fa-solid fa-magnifying-glass-plus orange-icon"></i>
               <% end %>
             </li>

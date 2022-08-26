@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[update destroy]
+  before_action :set_booking, only: %i[show update destroy]
   def new
   end
 
@@ -10,6 +10,10 @@ class BookingsController < ApplicationController
   end
 
   def index
+  end
+
+  def show
+    @show = Show.find(@booking.show.id)
   end
 
   def update

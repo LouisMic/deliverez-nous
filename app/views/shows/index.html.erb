@@ -1,47 +1,53 @@
-<div id="user-shows" class="row my-3">
-    <% @shows.each do |show| %>
-      <div class="col-4">
-        <div class="card mb-3 shadow">
-          <div class="card-header">
-              <strong>Company:</strong>
-              <%=show.company %>
-          </div>
-          <div class="row g-0">
-            <div class="col-md-4">
-              <% if show.photos[0] %>
-                <%= cl_image_tag show.photos[0].key, class:"img-fluid rounded-start h-100 w-100"%>
-              <% else %>
-                <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid rounded-start h-auto w-100" %>
-              <% end %>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h6 class="card-title">
-                   <%= show.name %>
-                </h6>
-                <p class="card-text"><%= show.description %></p>
-                <div>
-                  <p class="card-text"><small class="text-muted"><strong>Créateur:</strong> <%= show.user.name %></small></p>
+
+<div class="container">
+  <div id="user-shows" class="row my-3" data-controller="expand-card" data-expand-card-target="search">
+  <%if @shows.present?%>
+      <% @shows.each do |show| %>
+          <div class="col-4">
+            <div class="card mb-3 shadow" id="<%=show.id%>">
+              <div class="card-header">
+                  <strong>Compagnie:</strong>
+                  <%=show.company %>
+              </div>
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <% if show.photos[0] %>
+                    <%= cl_image_tag show.photos[0].key, class:"img-fluid rounded-start h-100 w-100"%>
+                  <% else %>
+                    <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid rounded-start h-100 w-100" %>
+                  <% end %>
                 </div>
-                  <span><strong>Prix:</strong> <%= show.price%></span>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title">
+                      <%= show.name %>
+                    </h6>
+                    <p class="card-text"><%= show.description %></p>
+                    <div>
+                      <p class="card-text"><small class="text-muted"><strong>Créateur:</strong> <%= show.user.name %></small></p>
+                    </div>
+                      <span><strong>Prix:</strong> <%= show.price%></span>
+                  </div>
+                </div>
+                <div class="card-footer">
+                <ul class="list-group list-group-horizontal">
+                  <li class="list-group-item m-1" style="cursor: pointer">
+                  <%# <%= link_to show_path(show) do %>
+                  <i class="fa-solid fa-magnifying-glass-plus orange-icon" data-action="click->expand-card#modal"></i>
+                  <%# <% end %>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="card-footer">
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item m-1">
-              <%= link_to edit_show_path(show) do %>
-                <i class="fa-solid fa-pen-to-square orange-icon"></i>
-              <% end %>
-              </li>
-              <li class="list-group-item m-1 hover">
-                <%= link_to show_path(show), data:{turbo_method: :delete, turbo_confirm:'Êtes vous sûr de vouloir supprimer ce spectacle ?'} do %>
-                  <i class="fa-solid fa-trash-can orange-icon"></i>
-                <% end %>
-              </li>
-            </ul>
           </div>
         </div>
-      </div>
+      <% end %>
+  <%else%>
+    <h2 class="text-center pt-5">Nous n'avons pas de spectacle avec ces critères</h2>
+    <div class="col text-center mt-4">
+      <%= link_to "Nouvelle recherche", root_path, class:"text-center button-orange"%>
     </div>
-    <% end %>
+  <%end%>
+  </div>
 </div>
+<%# <%= render "modal", show:   %>
