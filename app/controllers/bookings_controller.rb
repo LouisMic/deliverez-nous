@@ -22,6 +22,15 @@ class BookingsController < ApplicationController
 
   def show
     @show = Show.find(@booking.show.id)
+    @bookings = Booking.where(id: params[:id])
+    @markers = @bookings.geocoded.map do |booking|
+      {
+        lat: booking.latitude,
+        lng: booking.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { booking: booking }),
+        image_url: helpers.asset_url("logo4b.png")
+      }
+    end
   end
 
   def update

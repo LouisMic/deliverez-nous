@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="row vh-100">
-    <div class="col-6 offset-3 align-self-center">
+<div class="container py-5">
+  <div class="row">
+    <div class="col-6 offset-3">
       <ul class="list-group shadow">
         <li class="list-group-item text-center">
 
@@ -31,13 +31,19 @@
           <h5 class="p-0">Prix&nbsp;:&nbsp;</h5>
           <p class="text-muted"><%=@booking.show.price %></p>
         </li>
-        <li class="list-group-item justify-content-center d-flex">
-         <div style="width: 100%; height: 600px;"
-            data-controller="map"
-            data-map-markers-value="<%= @markers.to_json %>"
-            data-map-api-key-value="<%= ENV['pk.eyJ1IjoibG91aXNtaWMiLCJhIjoiY2w2b3VlZjB4MGVhdzNicW9haHBiZ2xzZSJ9.ETdxU2XYOHKDq2TXIBt0Xg'] %>">
-         </div>
+        <li class="list-group-item justify-content-center d-flex <%=@booking.validated ? 'bg-success' : 'bg-warning'%>">
+          <h5 class="p-0">Status&nbsp;:&nbsp;</h5>
+          <p class="text-muted"><%=@booking.validated ? 'confirmé' : 'En attente'%></p>
         </li>
+        <% if current_user.seller %>
+          <li class="list-group-item justify-content-center d-flex">
+            <div style="width: 100%; height: 400px;"
+                data-controller="map"
+                data-map-markers-value="<%= @markers.to_json %>"
+                data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+          </li>
+        <% end %>
         <li class="list-group-item d-flex justify-content-evenly py-5">
           <% if current_user.seller %>
             <%= link_to 'Mes réservations', dashboard_bookings_path, class:'button-orange', style:'width:10em'%>
