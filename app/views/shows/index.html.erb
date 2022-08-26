@@ -11,7 +11,7 @@
               <% if show.photos[0] %>
                 <%= cl_image_tag show.photos[0].key, class:"img-fluid rounded-start h-100 w-100"%>
               <% else %>
-                <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid rounded-start h-100 w-100" %>
+                <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid rounded-start h-auto w-100" %>
               <% end %>
             </div>
             <div class="col-md-8">
