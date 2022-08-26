@@ -34,6 +34,9 @@ class ShowsController < ApplicationController
   end
 
   def show
+    @address = params[:address]
+    @category = params[:category]
+    @date = params[:date]
   end
 
   def edit

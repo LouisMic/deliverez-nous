@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="mt-3 mb-3 d-flex justify-content-center">
-    <%= button_to "Réserver", bookings_path(address: @address, category: @category, date: @date), method: :post, class:"btn btn-primary button-orange" %>
+      <%= button_to "Réserver", bookings_path(id: @show.id, address: @address, category: @category, date: @date), method: :post, class:"btn btn-primary button-orange" %>
     </div>
   </div>
 </div>
