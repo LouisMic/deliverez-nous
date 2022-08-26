@@ -20,20 +20,20 @@
           <p class="text-muted"><%=@booking.show.name %></p>
         </li>
         <li class="list-group-item justify-content-center align-middle d-flex">
-          <h5 class="p-0">Companie&nbsp;:&nbsp; </h5>
+          <h5 class="p-0">Compagnie&nbsp;:&nbsp; </h5>
           <p class="text-muted"><%=@booking.show.company %></p>
         </li>
         <li class="list-group-item justify-content-center d-flex">
-          <h5 class="p-0">Intervenant&nbsp;:&nbsp;</h5>
+          <h5 class="p-0">Vendeur&nbsp;:&nbsp;</h5>
           <p class="text-muted"><%=@booking.show.user.name%></p>
         </li>
         <li class="list-group-item justify-content-center d-flex">
           <h5 class="p-0">Prix&nbsp;:&nbsp;</h5>
-          <p class="text-muted"><%=@booking.show.price %></p>
+          <p class="text-muted"><%=@booking.show.price %>€</p>
         </li>
         <li class="list-group-item justify-content-center d-flex <%=@booking.validated ? 'bg-success' : 'bg-warning'%>">
-          <h5 class="p-0">Status&nbsp;:&nbsp;</h5>
-          <p class="text-muted"><%=@booking.validated ? 'confirmé' : 'En attente'%></p>
+          <h5 class="p-0">Statut&nbsp;:&nbsp;</h5>
+          <p class="text-muted text-light"><%=@booking.validated ? 'confirmé' : 'En attente'%></p>
         </li>
         <% if current_user.seller %>
           <li class="list-group-item justify-content-center d-flex">
