@@ -10,11 +10,11 @@
                   <%=show.company %>
               </div>
               <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-4" id="cardalign">
                   <% if show.photos[0] %>
-                    <%= cl_image_tag show.photos[0].key, class:"img-fluid rounded-start h-100 w-100"%>
+                    <%= cl_image_tag show.photos[0].key, class:"img-fluid rounded-start h-auto w-100"%>
                   <% else %>
-                    <%= image_tag asset_url("https://placekeanu.com/200/300/g"), class:"img-fluid rounded-start h-100 w-100" %>
+                    <%= image_tag asset_url("logo4b.png"), class:"img-fluid rounded-start h-auto w-100" %>
                   <% end %>
                 </div>
                 <div class="col-md-8">
