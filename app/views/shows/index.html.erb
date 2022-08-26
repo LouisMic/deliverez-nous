@@ -3,6 +3,7 @@
       <% @shows.each do |show| %>
           <div class="col-4">
             <div class="card mb-3 shadow height-316">
+
               <div class="card-header">
                   <strong>Compagnie:</strong>
                   <%=show.company %>
@@ -40,6 +41,12 @@
           </div>
         </div>
       <% end %>
+  <%else%>
+    <h2 class="text-center pt-5">Nous n'avons pas de spectacle avec ces critères</h2>
+    <div class="col text-center mt-4">
+      <%= link_to "Nouvelle recherche", root_path, class:"text-center button-orange"%>
+    </div>
+  <%end%>
   </div>
   <div class="d-none" data-expand-card-target="alexandre">
     <%= @show = Show.find(72) %>
