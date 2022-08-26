@@ -1,4 +1,5 @@
 <div class="container" data-controller="expand-card">
+  <% if @shows.present? %>
   <div id="user-shows" class="row my-3" data-expand-card-target="search">
       <% @shows.each do |show| %>
           <div class="col-4">
@@ -45,12 +46,12 @@
     <h2 class="text-center pt-5">Nous n'avons pas de spectacle avec ces critères</h2>
     <div class="col text-center mt-4">
       <%= link_to "Nouvelle recherche", root_path, class:"text-center button-orange"%>
-    </div>
+      </div>
   <%end%>
   </div>
-  <div class="d-none" data-expand-card-target="alexandre">
+<%#   <div class="d-none" data-expand-card-target="alexandre">
     <%= @show = Show.find(72) %>
-    <%= render "modal", show: @show %>
-  </div>
+<%#     <%= render "modal", show: @show %>
+<%#   </div>  %>
 </div>
 <%# <%= render "modal", show:   %>

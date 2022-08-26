@@ -5,15 +5,13 @@ class BookingsController < ApplicationController
 
   def create
     @address = params[:address]
-    @category = params[:category]
-    @date = params[:start_time]
-    raise
-    @booking = Booking.new(address: @address, category: @category, start_time: @date)
+    @date = params[:date]
+    @booking = Booking.new(address: @address, start_time: @date)
     @show = Show.find(params[:id])
     @booking.show = @show
     @booking.user = current_user
     if @booking.save
-      redirect_to booking_path
+      redirect_to booking_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end
