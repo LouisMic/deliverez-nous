@@ -4,9 +4,19 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # raise
     @address = params[:address]
-    # @booking = Booking.create(@address,...)
+    @category = params[:category]
+    @date = params[:start_time]
+    raise
+    @booking = Booking.new(address: @address, category: @category, start_time: @date)
+    @show = Show.find(params[:id])
+    @booking.show = @show
+    @booking.user = current_user
+    if @booking.save
+      redirect_to booking_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def index
