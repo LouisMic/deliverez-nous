@@ -5,3 +5,13 @@
 //   display: flex;
 //   align-items: center;
 // }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-content {
+  flex-grow: 1;
+}

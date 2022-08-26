@@ -1,9 +1,10 @@
+
 <div class="container">
   <div id="user-shows" class="row my-3" data-controller="expand-card" data-expand-card-target="search">
   <%if @shows.present?%>
       <% @shows.each do |show| %>
           <div class="col-4">
-            <div class="card mb-3 shadow height-316" id="<%=show.id%>">
+            <div class="card mb-3 shadow" id="<%=show.id%>">
               <div class="card-header">
                   <strong>Compagnie:</strong>
                   <%=show.company %>
