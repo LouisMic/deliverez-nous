@@ -1,8 +1,8 @@
-<div class="container">
-  <div id="user-shows" class="row my-3" data-controller="expand-card" data-expand-card-target="search">
+<div class="container" data-controller="expand-card">
+  <div id="user-shows" class="row my-3" data-expand-card-target="search">
       <% @shows.each do |show| %>
           <div class="col-4">
-            <div class="card mb-3 shadow height-316" id="<%=show.id%>">
+            <div class="card mb-3 shadow height-316">
               <div class="card-header">
                   <strong>Compagnie:</strong>
                   <%=show.company %>
@@ -30,9 +30,9 @@
                 <div class="card-footer">
                 <ul class="list-group list-group-horizontal">
                   <li class="list-group-item m-1" style="cursor: pointer">
-                  <%# <%= link_to show_path(show) do %>
-                  <i class="fa-solid fa-magnifying-glass-plus orange-icon" data-action="click->expand-card#modal"></i>
-                  <%# <% end %>
+                  <%= link_to show_path(show, address: @address, category: @category, date: @date) do %>
+                  <i class="fa-solid fa-magnifying-glass-plus orange-icon" data-action="click->expand-card#change" id="<%=show.id%>"></i>
+                  <% end %>
                   </li>
                 </ul>
               </div>
@@ -40,6 +40,10 @@
           </div>
         </div>
       <% end %>
+  </div>
+  <div class="d-none" data-expand-card-target="alexandre">
+    <%= @show = Show.find(72) %>
+    <%= render "modal", show: @show %>
   </div>
 </div>
 <%# <%= render "modal", show:   %>

@@ -2,9 +2,12 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
 
-  static targets = ["search"]
+  static targets = ["search", "alexandre"]
 
-  modal(event) {
-    console.log(event.currentTarget)
+  change(event) {
+    const id = event.currentTarget.id
+
+    this.alexandreTarget.insertAdjacentHTML("beforeend", `<%= @show = Show.find(${id})%>`)
+    console.log(this.alexandreTarget.innerHTML)
   }
 }
