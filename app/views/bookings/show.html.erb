@@ -3,29 +3,48 @@
     <div class="col-6 offset-3 align-self-center">
       <ul class="list-group shadow">
         <li class="list-group-item text-center">
-          <%# <div class="text-center"> %>
-            <h1>Votre réservation</h1>
-            <%= image_tag asset_url('logo4b.png'), class:'rounded-circle w-25', alt:'image du spectacle'%>
-          <%# </div> %>
+
+        <h1>Votre réservation</h1>
+          <p>Date d'achat&nbsp;:&nbsp;
+          <span class="text-muted"><%= @booking.created_at.strftime("%d/%m/%Y-%H:%M")%></span>
+          </p>
+            <% if @booking.show.photos[0] %>
+              <%= cl_image_tag @booking.show.photos[0].key, class:"rounded-circle w-25"%>
+            <% else %>
+              <%= image_tag asset_url("logo4b.png"), class:"rounded-circle w-25", alt:'image du spectacle' %>
+            <% end %>
+
         </li>
         <li class="list-group-item justify-content-center d-flex">
           <h5 class="p-0">Spectacle&nbsp;:&nbsp;</h5>
-          <p>Nom du spectacle</p>
+          <p class="text-muted"><%=@booking.show.name %></p>
         </li>
         <li class="list-group-item justify-content-center align-middle d-flex">
           <h5 class="p-0">Companie&nbsp;:&nbsp; </h5>
-          <p>Nom de la companie</p>
+          <p class="text-muted"><%=@booking.show.company %></p>
         </li>
         <li class="list-group-item justify-content-center d-flex">
           <h5 class="p-0">Intervenant&nbsp;:&nbsp;</h5>
-          <p>Nom du créateur</p>
+          <p class="text-muted"><%=@booking.show.user.name%></p>
         </li>
         <li class="list-group-item justify-content-center d-flex">
           <h5 class="p-0">Prix&nbsp;:&nbsp;</h5>
-          <p>Prix du spectacle</p>
+          <p class="text-muted"><%=@booking.show.price %></p>
         </li>
-        <li class="list-group-item text-center">
-          <%= link_to 'Mes réservations', dashboard_path, class:'button-orange' %>
+        <li class="list-group-item justify-content-center d-flex">
+         <div style="width: 100%; height: 600px;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['pk.eyJ1IjoibG91aXNtaWMiLCJhIjoiY2w2b3VlZjB4MGVhdzNicW9haHBiZ2xzZSJ9.ETdxU2XYOHKDq2TXIBt0Xg'] %>">
+         </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-evenly py-5">
+          <% if current_user.seller %>
+            <%= link_to 'Mes réservations', dashboard_bookings_path, class:'button-orange', style:'width:10em'%>
+          <% else %>
+            <%= link_to 'Mes réservations', dashboard_path, class:'button-orange', style:'width:10em'%>
+          <% end %>
+          <%= link_to 'Spectacle', show_path(@show), class:'button-orange', style:'width:10em' %>
         </li>
       </ul>
     </div>
