@@ -5,11 +5,11 @@
   </div>
   <ul class="nav nav-tabs" data-controller="dashboard-tabs">
     <li class="nav-item" >
-      <%= link_to 'Spectacles', dashboard_path, 'data-tab-name' => 'shows', class:'nav-link'%>
+      <%= link_to 'Mes commandes', dashboard_path, 'data-tab-name' => 'shows', class:'nav-link'%>
     </li>
     <%if @is_seller %>
       <li class="nav-item">
-        <%= link_to 'Mes Spectacles', dashboard_user_shows_path, 'data-tab-name' => 'user-shows' ,class:'active nav-link'%>
+        <%= link_to 'Mes créations', dashboard_user_shows_path, 'data-tab-name' => 'user-shows' ,class:'active nav-link'%>
       </li>
     <% end %>
     <% if @is_seller %>
